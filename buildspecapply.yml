@@ -1,0 +1,26 @@
+version: 0.2
+env:
+  parameter-store:
+    AWS_ACCESS_KEY_PROD: "devops-access-key"
+    AWS_SECRET_KEY_PROD: "devops-secret-key"
+
+phases:
+  install:
+    runtime-versions:
+       docker: 19
+    commands:
+      - curl -O https://releases.hashicorp.com/terraform/1.1.4/terraform_1.1.4_linux_amd64.zip
+      - unzip ./terraform_1.1.4_linux_amd64.zip -d /usr/local/bin
+      - terraform -v
+
+  pre_build:
+    commands:
+      - echo build started on 'date'
+
+  build:
+    commands:
+      - terraform apply "plan.tf"
+
+  post_build:
+    commands:
+      - echo build completed on 'date'
