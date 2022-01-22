@@ -35,7 +35,7 @@ The Project will make use of:
 
 On the DevOps account: 
 
-The cross account role should have relevant access permisions, for testing purposes I gave my role admin access. But it is recommended to give limited permissions necessary for the functions the role will perform. 
+The cross account role should have relevant access permissions, for testing purposes I gave my role admin access. But it is recommended to give limited permissions necessary for the functions the role will perform. 
 
 Edit trust relationships as below:
 
