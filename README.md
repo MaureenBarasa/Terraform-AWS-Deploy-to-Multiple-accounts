@@ -1,3 +1,4 @@
+```yaml
 # This Repository is for an Automation Project to deploy resources from an AWS account in another AWS account.
 
 It provides a step by step guide on how to do this. 
@@ -37,7 +38,7 @@ On the DevOps account:
 The cross account role should have relevant access permisions, for testing purposes I gave my role admin access. But it is recommended to give limited permissions necessary for the functions the role will perform. 
 
 Edit trust relationships as below:
-```yaml
+
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -54,7 +55,6 @@ Edit trust relationships as below:
     }
   ]
 }
-```yaml
 
 On the Prod/dev/Staging account (where you need to provision resources):
 
