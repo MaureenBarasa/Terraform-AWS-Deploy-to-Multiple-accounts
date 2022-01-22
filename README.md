@@ -21,6 +21,12 @@ The Project will make use of:
     - devops-access-key
     - devops-secret-key
 
+2. CREATE S3 BUCKET FOR TERRAFORM STATE FILES. 
+
+- Create an S3 bucket to be used as terraform backend/store terraform state files. 
+- Ensure bucket is not publicly accessible. 
+
+
 SET IAM PERMISSIONS
 
 CREATE BUILDSPEC FILES
