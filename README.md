@@ -4,13 +4,13 @@ It provides a step by step guide on how to do this.
 
 The Project will make use of:
 
-1.IAM
-2. Parameter-Store
-3. CodeCommit
-4. CodeBuild
-5. CodePipeline
-6. S3
-7. SNS 
+IAM
+Parameter-Store
+CodeCommit
+CodeBuild
+CodePipeline
+S3
+SNS 
 
 1. SET UP CREDENTIALS ON PARAMETER STORE
 
