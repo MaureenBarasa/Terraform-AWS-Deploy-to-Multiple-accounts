@@ -39,6 +39,7 @@ The cross account role should have relevant access permisions, for testing purpo
 
 Edit trust relationships as below:
 
+===============================
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -55,12 +56,14 @@ Edit trust relationships as below:
     }
   ]
 }
+=========================================
 
 On the Prod/dev/Staging account (where you need to provision resources):
 
 The cross account role should have relevant access permissions, for testing purposes I gave my role admin access. But it is recommended to give limited permissions necessary for the functions the role will perform.
 
 Add an Inline policy for Terraform S3 state bucket access:
+
 ================================================
 {
     "Version": "2012-10-17",
@@ -102,6 +105,7 @@ Edit trust relationship as below:
   ]
 }
 =========================================================
+
 - S3 state Bucket Permissions: Set the below bucket policy on the create S3 terraform state bucket.
 
 ======================================================
