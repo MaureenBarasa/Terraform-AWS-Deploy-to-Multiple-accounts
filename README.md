@@ -191,16 +191,65 @@ Edit the trust relationship of the role as below:
 ============================================
 
 
+4. CREATE A CODECOMMIT OR GITHUB REPOSITORY
 
-SET IAM PERMISSIONS
+Add the below files to the repository; I have uploaded the files on this repo. 
 
-CREATE BUILDSPEC FILES
+5. CREATE CODE BUILD PROJECTS USING CODEBUILD
 
-CREATE TERRAFORM FILES
+These can be created using CloudFormation or manually on the console.
 
-CREATE BUILD PROJECTS
+Ensure the build projects are using the CodeBuild service role created earlier.
 
-CREATE PIPELINE
+Also the build project should reference the correct buildspec.yml file. See below:
+
+buildspectest.yml  for the terraform init, validate and plan stage.
+buildspecapply.yml  for the terraform apply stage.
+
+See guide here[1] on how to do this.
+
+6. CREATE AN SNS TOPIC AND SUBSCRIPTION
+These can be created using CloudFormation or manually on the console. See guide here[2] and [3] on how to do this.
+This will be used to send emails foir the manual approval stage on the pipeline. 
+
+7. CREATE PIPELINE USING CODEPIPELINE
+The pipeline can be created using CloudFormation or manually on the console.
+
+It will have four stages
+
+Source stage
+CodeBuild Stage (Terrfoam, init , validate and plan stage)
+Manual approval stage (before Terraform Apply)
+CodeBuild (Terraform Apply stage)
+
+If creating the pipeline manually from console;
+The initial Pipeline will have two stages (Source and build)
+We then edit the pipeline and add the manual approval and terraform apply stage (essentially another build stage). 
+
+See relevant guides here[4], [5], [6] and [7] on this. 
+
+References: 
+
+[1] Create a build project in AWS CodeBuild
+https://docs.aws.amazon.com/codebuild/latest/userguide/create-project.html
+
+[2] Creating an Amazon SNS topic
+https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html
+
+[3] Subscribing to an Amazon SNS topic
+https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html
+
+[4] Create a pipeline in CodePipeline
+https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create.html
+
+[5] Edit a pipeline in CodePipeline
+https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-edit.html
+
+[6] Add a manual approval action to a pipeline in CodePipeline
+https://docs.aws.amazon.com/codepipeline/latest/userguide/approvals-action-add.html
+
+[7] Add another stage to your pipeline
+https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html#tutorials-four-stage-pipeline-add-stage
 
 
 
