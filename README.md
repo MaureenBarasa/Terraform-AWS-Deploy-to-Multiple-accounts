@@ -9,7 +9,8 @@ The Project will make use of:
 3. CodeCommit
 4. CodeBuild
 5. CodePipeline
-6. S3 
+6. S3
+7. SNS 
 
 SET UP CREDENTIALS ON PARAMETER STORE
 
