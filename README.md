@@ -18,8 +18,8 @@ The Project will make use of:
 - Generate Access Keys and Secret Keys for the user.
 - Store the credentials to Parameter store. I stored mine as; 
 
-    devops-access-key
-    devops-secret-key
+    . devops-access-key
+    . devops-secret-key
 
 SET IAM PERMISSIONS
 
