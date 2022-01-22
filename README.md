@@ -4,13 +4,13 @@ It provides a step by step guide on how to do this.
 
 The Project will make use of:
 
-IAM
-Parameter-Store
-CodeCommit
-CodeBuild
-CodePipeline
-S3
-SNS 
+- IAM
+- Parameter-Store
+- CodeCommit
+- CodeBuild
+- CodePipeline
+- S3
+- SNS 
 
 1. SET UP CREDENTIALS ON PARAMETER STORE
 
@@ -18,8 +18,8 @@ SNS
 - Generate Access Keys and Secret Keys for the user.
 - Store the credentials to Parameter store. I stored mine as; 
 
-    . devops-access-key
-    . devops-secret-key
+    - devops-access-key
+    - devops-secret-key
 
 SET IAM PERMISSIONS
 
