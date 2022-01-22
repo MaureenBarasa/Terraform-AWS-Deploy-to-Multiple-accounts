@@ -37,7 +37,7 @@ On the DevOps account:
 The cross account role should have relevant access permisions, for testing purposes I gave my role admin access. But it is recommended to give limited permissions necessary for the functions the role will perform. 
 
 Edit trust relationships as below:
-
+===============================================
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -54,14 +54,14 @@ Edit trust relationships as below:
     }
   ]
 }
-
+=============================================
 
 On the Prod/dev/Staging account (where you need to provision resources):
 
 The cross account role should have relevant access permissions, for testing purposes I gave my role admin access. But it is recommended to give limited permissions necessary for the functions the role will perform.
 
 Add an Inline policy for Terraform S3 state bucket access:
-
+================================================
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -81,7 +81,7 @@ Add an Inline policy for Terraform S3 state bucket access:
         }
     ]
 }
-
+=====================================================
 
 Edit trust relationship as below:
 
@@ -101,9 +101,10 @@ Edit trust relationship as below:
     }
   ]
 }
-
+=========================================================
 - S3 state Bucket Permissions: Set the below bucket policy on the create S3 terraform state bucket.
 
+======================================================
 {
     "Version": "2012-10-17",
     "Id": "Policy1642707597159",
@@ -122,7 +123,7 @@ Edit trust relationship as below:
         }
     ]
 }
-
+=======================================================
 
 - CodeBuild Role Permissions: On the DevOps account, create a Role that will be used by the CodeBuild Project. Ensure the role has the following permissions. 
 
@@ -132,7 +133,7 @@ add the below 2 inline policies:
 
 The crossaccount assume role policy
 
-
+============================================
 {
     "Version": "2012-10-17",
     "Statement": {
@@ -141,10 +142,11 @@ The crossaccount assume role policy
         "Resource": "role ARN created on the DevOps account for CrossAccount Access to the dev/staging/prod accounts"
     }
 }
-
+==============================================
 
 The terraform state bucket access
 
+======================================
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -164,11 +166,11 @@ The terraform state bucket access
         }
     ]
 }
-
+=========================================
 
 Edit the trust relationship of the role as below:
 
-
+==========================================
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -182,7 +184,7 @@ Edit the trust relationship of the role as below:
     }
   ]
 }
-
+============================================
 
 
 
