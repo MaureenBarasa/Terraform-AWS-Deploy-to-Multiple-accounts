@@ -12,7 +12,16 @@ The Project will make use of:
 6. S3
 7. SNS 
 
-SET UP CREDENTIALS ON PARAMETER STORE
+1. SET UP CREDENTIALS ON PARAMETER STORE
+
+- Create a user Terraform/Git on the AWS account (DevOps Account) that will host the CodePipeline.
+- Generate Access Keys and Secret Keys for the user.
+- Store the credentials to Parameter store. I stored mine as; 
+
+========================
+    devops-access-key
+    devops-secret-key
+==========================
 
 SET IAM PERMISSIONS
 
