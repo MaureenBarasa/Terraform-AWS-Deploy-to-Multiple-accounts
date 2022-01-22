@@ -118,12 +118,12 @@ Edit trust relationship as below:
             "Effect": "Allow",
             "Principal": {
                 "AWS": [
-                    "arn:aws:iam::401392287136:role/service-role/codebuild-Terraform-Test-service-role",
-                    "arn:aws:iam::342053932470:role/Cross-Account-Staging"
+                    "Created CodeBuild Service Role ARN",
+                    "Created DevOps Account Cross Account Role ARN"
                 ]
             },
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::maureen-terraform-st-bckt"
+            "Resource": "arn:aws:s3:::*****************-terraform-st-bckt"
         }
     ]
 }
